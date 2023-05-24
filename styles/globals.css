@@ -18,3 +18,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.flexRowCenter {
+  @apply flex justify-center items-center;
+}
+
+.flowColumnCenter {
+  @apply flex-col justify-center items-center;
+}
