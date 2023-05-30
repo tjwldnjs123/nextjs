@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Layout from "../components/layout/Layout";
 import MeetupList from "../components/meetups/MeetUpList";
 import styles from "../styles/Home.module.css";
 
@@ -32,8 +33,10 @@ const DUMMY_MEETUPS = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center border border-sky-400 ">
-      <MeetupList meetupsData={DUMMY_MEETUPS} />
-    </div>
+    <Layout>
+      <div className="flex flex-col items-center border border-sky-400 ">
+        <MeetupList meetupsData={DUMMY_MEETUPS} />
+      </div>
+    </Layout>
   );
 }
