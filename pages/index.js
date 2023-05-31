@@ -33,10 +33,8 @@ const DUMMY_MEETUPS = [
 
 export default function Home() {
   return (
-    <Layout>
-      <div className="flex flex-col items-center border border-sky-400 ">
-        <MeetupList meetupsData={DUMMY_MEETUPS} />
-      </div>
-    </Layout>
+    <div className="flex flex-col items-center mt-[10%] ">
+      <MeetupList meetupsData={DUMMY_MEETUPS} />
+    </div>
   );
 }
