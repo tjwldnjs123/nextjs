@@ -31,10 +31,19 @@ const DUMMY_MEETUPS = [
   },
 ];
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div className="flex flex-col items-center mt-[10%] ">
-      <MeetupList meetupsData={DUMMY_MEETUPS} />
+      <MeetupList meetupsData={props.meetups} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+    revalidate: 1,
+  };
 }

@@ -1,7 +1,6 @@
+import MeetupDetail from "../../components/meetups/MeetupDetail";
 import NewMeetupForm from "../../components/meetups/NewMeetupForm";
 
-function DetailMeetup() {
-  return <div>hi</div>;
-}
-
-export default DetailMeetup;
+export default () => {
+  return <MeetupDetail />;
+};
