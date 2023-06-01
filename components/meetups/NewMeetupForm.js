@@ -1,16 +1,30 @@
 import { Button, Card, TextField } from "@mui/material";
+import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 
 function NewMeetupForm() {
+  const router = useRouter();
+
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [address, setAddress] = useState("");
   const [description, setDescription] = useState("");
 
-  const onNewMeetup = (e) => {
+  const onNewMeetup = async (e) => {
     e.preventDefault();
-
-    console.log(image);
+    const res = await fetch("/api/new-meetup", {
+      method: "POST",
+      body: JSON.stringify({
+        title,
+        image,
+        address,
+        description,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await res.json();
+    console.log(data);
+    router.push("/");
   };
   return (
     <Card className="w-[90%] m-auto mt-20 flex flex-col">
