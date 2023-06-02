@@ -13,13 +13,16 @@ export default function MeetupList({ meetupsData }) {
       {meetupsData?.map((meetup) => {
         return (
           <Card
-            className="w-[500px]  mb-10 flex flex-col justify-center items-center bg-yellow-100"
+            className="w-[500px]  mb-10 flex flex-col justify-center items-center bg-yellow-100 p-2"
             key={meetup.id}
           >
             <img src={meetup.image} />
             <div>{meetup.title}</div>
             <div>{meetup.description}</div>
-            <button onClick={() => onDetailMeetup(meetup.id)}>
+            <button
+              className="border border-gray-400  rounded-lg p-2"
+              onClick={() => onDetailMeetup(meetup.id)}
+            >
               Show Details
             </button>
           </Card>
