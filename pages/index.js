@@ -7,9 +7,14 @@ import styles from "../styles/Home.module.css";
 
 export default function Home(props) {
   return (
-    <div className="flex flex-col items-center mt-[10%] ">
-      <MeetupList meetupsData={props.meetups} />
-    </div>
+    <>
+      {/* <Head>
+        <title>Nextjs Meetup</title>
+      </Head> */}
+      <div className="flex flex-col items-center mt-[10%] ">
+        <MeetupList meetupsData={props.meetups} />
+      </div>
+    </>
   );
 }
 
